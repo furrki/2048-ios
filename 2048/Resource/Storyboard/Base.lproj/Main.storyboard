@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MainVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="_048" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2048" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMf-O6-u9b">
+                                <rect key="frame" x="130.5" y="113.5" width="114" height="55"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="50"/>
+                                <color key="textColor" red="1" green="0.6588235294117647" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9HM-j5-ybB">
+                                <rect key="frame" x="60" y="308.5" width="255" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.6588235294" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="06u-uJ-sSc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                                <inset key="titleEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                <state key="normal" title="Start Game">
+                                    <color key="titleColor" red="0.28235294119999998" green="0.3294117647" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="73H-UA-gQn" kind="show" id="aFU-mN-dJc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7iX-Ry-iRR">
+                                <rect key="frame" x="60" y="398.5" width="255" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.6588235294" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4Ge-vy-gXa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                                <inset key="titleEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                <state key="normal" title="About">
+                                    <color key="titleColor" red="0.28235294119999998" green="0.3294117647" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.3411764705882353" green="0.37254901960784315" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9HM-j5-ybB" secondAttribute="trailing" constant="60" id="2tf-vV-Dmk"/>
+                            <constraint firstItem="9HM-j5-ybB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="7P7-pe-0s3"/>
+                            <constraint firstItem="7iX-Ry-iRR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="CEY-4V-JeN"/>
+                            <constraint firstItem="9HM-j5-ybB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CJg-ld-Bve"/>
+                            <constraint firstItem="7iX-Ry-iRR" firstAttribute="top" secondItem="9HM-j5-ybB" secondAttribute="bottom" constant="40" id="JuL-US-Rfm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7iX-Ry-iRR" secondAttribute="trailing" constant="60" id="TdO-LS-gSX"/>
+                            <constraint firstItem="gMf-O6-u9b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZYA-Px-rj2"/>
+                            <constraint firstItem="7iX-Ry-iRR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eqg-DF-SMU"/>
+                            <constraint firstItem="9HM-j5-ybB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gVS-kY-RDC"/>
+                            <constraint firstItem="9HM-j5-ybB" firstAttribute="top" secondItem="gMf-O6-u9b" secondAttribute="bottom" constant="140" id="qV9-fj-icB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
+        </scene>
+        <!--GameVC-->
+        <scene sceneID="wc1-YU-ph4">
+            <objects>
+                <viewController id="73H-UA-gQn" customClass="GameVC" customModule="_048" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WTE-B0-RN9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2048" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LmR-dU-dct">
+                                <rect key="frame" x="130.5" y="43.5" width="114" height="55"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="50"/>
+                                <color key="textColor" red="1" green="0.6588235294" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wF6-JX-bnK">
+                                <rect key="frame" x="32.5" y="178.5" width="310" height="310"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="310" id="bb5-fQ-f33"/>
+                                    <constraint firstAttribute="height" constant="310" id="q5L-tW-qkX"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="x9C-PV-l7H">
+                                    <size key="itemSize" width="70" height="70"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fXV-uI-zlo">
+                                        <rect key="frame" x="5" y="5" width="70" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.3411764706" green="0.37254901959999998" blue="0.81176470590000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wF6-JX-bnK" firstAttribute="leading" relation="lessThanOrEqual" secondItem="wjP-Pi-D9x" secondAttribute="leading" priority="750" constant="37" id="5ew-88-1bK"/>
+                            <constraint firstItem="wF6-JX-bnK" firstAttribute="top" secondItem="LmR-dU-dct" secondAttribute="bottom" constant="80" id="9bh-5x-XFE"/>
+                            <constraint firstItem="wF6-JX-bnK" firstAttribute="centerX" secondItem="WTE-B0-RN9" secondAttribute="centerX" id="Nnd-m2-JTX"/>
+                            <constraint firstItem="LmR-dU-dct" firstAttribute="centerX" secondItem="WTE-B0-RN9" secondAttribute="centerX" id="ggu-Mr-zgv"/>
+                            <constraint firstItem="wjP-Pi-D9x" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="wF6-JX-bnK" secondAttribute="trailing" priority="750" constant="38" id="gob-E0-QZY"/>
+                            <constraint firstItem="wF6-JX-bnK" firstAttribute="centerY" secondItem="WTE-B0-RN9" secondAttribute="centerY" id="h22-Bq-g4Y"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wjP-Pi-D9x"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8oc-BI-38g" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="788" y="26.53673163418291"/>
+        </scene>
+    </scenes>
+</document>
