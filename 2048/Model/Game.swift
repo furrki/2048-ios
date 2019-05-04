@@ -17,6 +17,8 @@ class Game {
         table = (1...16).map({ (i) -> Int in
             return 0
         })
+        
+        generateRandom()
     }
     
     func generateRandom() {
@@ -26,7 +28,6 @@ class Game {
             table[selected] = 2
         }
     }
-    
     
 }
 

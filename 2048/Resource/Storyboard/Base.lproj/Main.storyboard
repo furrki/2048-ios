@@ -98,7 +98,7 @@
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wF6-JX-bnK">
                                 <rect key="frame" x="32.5" y="178.5" width="310" height="310"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.28235294117647058" green="0.32941176470588235" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="310" id="bb5-fQ-f33"/>
                                     <constraint firstAttribute="height" constant="310" id="q5L-tW-qkX"/>
@@ -107,10 +107,10 @@
                                     <size key="itemSize" width="70" height="70"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
+                                    <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fXV-uI-zlo">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="gameCell" id="fXV-uI-zlo" customClass="GameCell" customModule="_048" customModuleProvider="target">
                                         <rect key="frame" x="5" y="5" width="70" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -125,13 +125,20 @@
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.50196078431372548" green="0.55686274509803924" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="Cp6-gC-Mq4" firstAttribute="centerX" secondItem="fXV-uI-zlo" secondAttribute="centerX" id="LG1-wC-kwF"/>
                                             <constraint firstItem="Cp6-gC-Mq4" firstAttribute="centerY" secondItem="fXV-uI-zlo" secondAttribute="centerY" id="Nni-2V-T6D"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="numberLabel" destination="Cp6-gC-Mq4" id="OBD-Nh-wse"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="73H-UA-gQn" id="zRS-O4-NcL"/>
+                                    <outlet property="delegate" destination="73H-UA-gQn" id="NbI-7J-71f"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="0.3411764706" green="0.37254901959999998" blue="0.81176470590000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -145,6 +152,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wjP-Pi-D9x"/>
                     </view>
+                    <connections>
+                        <outlet property="gameTable" destination="wF6-JX-bnK" id="Pgd-pN-qsd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8oc-BI-38g" sceneMemberID="firstResponder"/>
             </objects>
