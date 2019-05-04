@@ -116,8 +116,20 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2048" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cp6-gC-Mq4">
+                                                    <rect key="frame" x="7.5" y="21.5" width="55" height="27"/>
+                                                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="24"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </view>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Cp6-gC-Mq4" firstAttribute="centerX" secondItem="fXV-uI-zlo" secondAttribute="centerX" id="LG1-wC-kwF"/>
+                                            <constraint firstItem="Cp6-gC-Mq4" firstAttribute="centerY" secondItem="fXV-uI-zlo" secondAttribute="centerY" id="Nni-2V-T6D"/>
+                                        </constraints>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
