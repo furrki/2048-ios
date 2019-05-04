@@ -9,8 +9,9 @@
 import UIKit
 
 func getColor(for number: Int) -> [UIColor] {
-    
-    if number == 2 {
+    if number == 0 {
+        return  [#colorLiteral(red: 0.5019607843, green: 0.5568627451, blue: 0.6078431373, alpha: 1), #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
+    } else if number == 2 {
         return  [#colorLiteral(red: 0.8235294118, green: 0.8549019608, blue: 0.8862745098, alpha: 1), #colorLiteral(red: 0.1176470588, green: 0.1529411765, blue: 0.1803921569, alpha: 1)]
     } else if number == 4 {
         return  [#colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1), #colorLiteral(red: 0.1176470588, green: 0.1529411765, blue: 0.1803921569, alpha: 1)]

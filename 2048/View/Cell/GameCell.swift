@@ -12,11 +12,13 @@ class GameCell: UICollectionViewCell {
     @IBOutlet weak var numberLabel: UILabel!
     
     func initialize(no: Int) {
+        
+        let colors = getColor(for: no)
+        contentView.backgroundColor = colors[0]
+        numberLabel.textColor = colors[1]
+        
         if no != 0 {
             numberLabel.text = "\(no)"
-            let colors = getColor(for: no)
-            contentView.backgroundColor = colors[0]
-            numberLabel.textColor = colors[1]
         } else {
             numberLabel.text = ""
         }

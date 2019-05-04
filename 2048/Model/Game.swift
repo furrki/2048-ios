@@ -10,6 +10,8 @@ import Foundation
 
 class Game {
     
+    weak var delegate: GameDelegate?
+    
     var score = 0
     var table = [Int]()
     
@@ -26,12 +28,22 @@ class Game {
         if availableIndexes.count > 0 {
             let selected = availableIndexes.randomElement()!
             table[selected] = 2
+            delegate?.game(table)
         }
     }
     
+    func doMove(move: Move) {
+        
+        
+        generateRandom()
+    }
 }
 
 enum Move {
     case Up, Down, Left, Right
+}
+
+protocol GameDelegate: class {
+    func game(_ tableChanged: [Int])
 }
 
