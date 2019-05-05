@@ -12,8 +12,16 @@ class Game {
     
     weak var delegate: GameDelegate?
     
-    var score = 0
+    var score = 0 {
+        didSet {
+            self.delegate?.game(score)
+        }
+    }
+    
+    var prevScore = 0
+    
     var table = [Int]()
+    var prevTable = [Int]()
     
     init() {
         table = (1...16).map({ (i) -> Int in
@@ -21,6 +29,7 @@ class Game {
         })
         
         generateRandom()
+        prevTable = table
     }
     
     func generateRandom() {
@@ -32,17 +41,11 @@ class Game {
         }
     }
     
-    func unite(from: Int, to: Int) {
-        if table[from] == table[to] {
-            table[to] = table[from] * 2
-            table[from] = 0
-        }
-    }
-    
-    func carry(from: Int, to: Int) {
-        if table[to] == 0 {
-            table[to] = table[from]
-            table[from] = 0
+    func back() {
+        if table != prevTable {
+            table = prevTable
+            score = prevScore
+            delegate?.game(table)
         }
     }
     
@@ -94,6 +97,7 @@ class Game {
         if lastTable == table {
             
         } else {
+            prevTable = lastTable
             generateRandom()
         }
     }
@@ -109,6 +113,8 @@ class Game {
                 } else {
                     if previous == col[i] {
                         newCol[j] = 2 * col[i]
+                        prevScore = score
+                        score += newCol[j]
                         previous = nil
                     } else {
                         newCol[j] = previous!
@@ -135,6 +141,8 @@ class Game {
                 } else {
                     if previous == col[i] {
                         newCol[j] = 2 * col[i]
+                        prevScore = score
+                        score += newCol[j]
                         previous = nil
                     } else {
                         newCol[j] = previous!
@@ -166,6 +174,7 @@ enum Move {
 
 protocol GameDelegate: class {
     func game(_ tableChanged: [Int])
+    func game(_ scoreUpdated: Int)
 }
 
 

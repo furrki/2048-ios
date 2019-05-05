@@ -13,6 +13,7 @@ class GameVC: UIViewController {
     var game = Game()
     
     @IBOutlet weak var gameTable: UICollectionView!
+    @IBOutlet weak var scoreLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,19 +29,19 @@ class GameVC: UIViewController {
     func addGestureRecognizers()  {
         let rightSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swiped(gesture:)))
         rightSwipeRecognizer.direction = .right
-        gameTable.addGestureRecognizer(rightSwipeRecognizer)
+        self.view.addGestureRecognizer(rightSwipeRecognizer)
         
         let leftSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swiped(gesture:)))
         leftSwipeRecognizer.direction = .left
-        gameTable.addGestureRecognizer(leftSwipeRecognizer)
+        self.view.addGestureRecognizer(leftSwipeRecognizer)
         
         let upSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swiped(gesture:)))
         upSwipeRecognizer.direction = .up
-        gameTable.addGestureRecognizer(upSwipeRecognizer)
+        self.view.addGestureRecognizer(upSwipeRecognizer)
         
         let downSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swiped(gesture:)))
         downSwipeRecognizer.direction = .down
-        gameTable.addGestureRecognizer(downSwipeRecognizer)
+        self.view.addGestureRecognizer(downSwipeRecognizer)
     }
     
     @objc func swiped(gesture: UISwipeGestureRecognizer) {
@@ -60,6 +61,17 @@ class GameVC: UIViewController {
         default: break
         }
     }
+    
+    @IBAction func backButtonTap(_ sender: Any) {
+        game.back()
+    }
+    
+    @IBAction func resetButtonTap(_ sender: Any) {
+        game = Game()
+        game.delegate = self
+        scoreLabel.text = "0"
+        gameTable.reloadData()
+    }
 }
 
 extension GameVC: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -78,4 +90,9 @@ extension GameVC: GameDelegate {
     func game(_ tableChanged: [Int]) {
         self.gameTable.reloadData()
     }
+    
+    func game(_ scoreUpdated: Int) {
+        scoreLabel.text = "\(scoreUpdated)"
+    }
+    
 }
