@@ -81,7 +81,7 @@ class GameVC: UIViewController {
         }))
         
         refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
-          
+            
         }))
         
         present(refreshAlert, animated: true, completion: nil)
@@ -110,8 +110,6 @@ extension GameVC: GameDelegate {
     }
     
     func game(changed cells: [Int]) {
-        UIView.animate(withDuration: 0.5, animations: {
-            self.gameTable.reloadItems(at: cells.map({ return IndexPath(item: $0, section: 0) }))
-        }, completion: nil)
+        self.gameTable.reloadItems(at: cells.map({ return IndexPath(item: $0, section: 0) }))
     }
 }

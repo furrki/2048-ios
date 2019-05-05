@@ -19,6 +19,7 @@
 		FB1AA798227E3F8A001FCD5E /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1AA797227E3F8A001FCD5E /* Extension.swift */; };
 		FB1AA79B227E44EE001FCD5E /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1AA79A227E44EE001FCD5E /* GameCell.swift */; };
 		FB1AA79D227E47EF001FCD5E /* ColorGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1AA79C227E47EF001FCD5E /* ColorGenerator.swift */; };
+		FBC08005227EEFCE0050747D /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC08004227EEFCE0050747D /* AboutVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		FB1AA797227E3F8A001FCD5E /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		FB1AA79A227E44EE001FCD5E /* GameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCell.swift; sourceTree = "<group>"; };
 		FB1AA79C227E47EF001FCD5E /* ColorGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGenerator.swift; sourceTree = "<group>"; };
+		FBC08004227EEFCE0050747D /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 			children = (
 				FB1AA761227E2E1A001FCD5E /* MainVC.swift */,
 				FB1AA793227E3346001FCD5E /* GameVC.swift */,
+				FBC08004227EEFCE0050747D /* AboutVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				FB1AA762227E2E1A001FCD5E /* MainVC.swift in Sources */,
 				FB1AA794227E3346001FCD5E /* GameVC.swift in Sources */,
 				FB1AA760227E2E1A001FCD5E /* AppDelegate.swift in Sources */,
+				FBC08005227EEFCE0050747D /* AboutVC.swift in Sources */,
 				FB1AA796227E3AB8001FCD5E /* Game.swift in Sources */,
 				FB1AA79B227E44EE001FCD5E /* GameCell.swift in Sources */,
 				FB1AA79D227E47EF001FCD5E /* ColorGenerator.swift in Sources */,

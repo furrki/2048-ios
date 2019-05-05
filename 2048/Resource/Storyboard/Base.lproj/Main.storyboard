@@ -60,6 +60,9 @@
                                         <integer key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="6jj-Tx-XKa" kind="show" id="Kyd-hA-XPi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.3411764705882353" green="0.37254901960784315" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -238,6 +241,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8oc-BI-38g" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="788" y="26.53673163418291"/>
+        </scene>
+        <!--AboutVC-->
+        <scene sceneID="9T6-4Z-ZxV">
+            <objects>
+                <viewController id="6jj-Tx-XKa" customClass="AboutVC" customModule="_048" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="owp-4U-gR2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2C9-WN-3vm">
+                                <rect key="frame" x="15" y="203.5" width="345" height="448.5"/>
+                                <color key="tintColor" red="1" green="0.6588235294" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="scrollIndicatorInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <string key="text">2048 Game was designed by an Italian developer, Gabriele Cirulli on 2014.   This duplication of 2048 is made by furrki.  To play the game, swipe to any direction after starting the game.  Contact Me at: furrki@furrki.com </string>
+                                <color key="textColor" red="1" green="0.82745098039215681" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AiY-7y-F2b">
+                                <rect key="frame" x="15" y="25" width="30" height="43"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="28"/>
+                                <state key="normal" title="x">
+                                    <color key="titleColor" red="1" green="0.82745098039999998" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBack:" destination="6jj-Tx-XKa" eventType="touchUpInside" id="xUg-Q3-vDb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2048" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEa-oI-knR">
+                                <rect key="frame" x="142" y="140" width="91.5" height="43.5"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="40"/>
+                                <color key="textColor" red="1" green="0.6588235294" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.3411764706" green="0.37254901959999998" blue="0.81176470590000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="AiY-7y-F2b" firstAttribute="leading" secondItem="2C9-WN-3vm" secondAttribute="leading" id="318-Fk-uxs"/>
+                            <constraint firstItem="fEa-oI-knR" firstAttribute="top" secondItem="MZW-1p-mHG" secondAttribute="top" constant="120" id="7a4-jX-ZQ7"/>
+                            <constraint firstItem="2C9-WN-3vm" firstAttribute="top" secondItem="fEa-oI-knR" secondAttribute="bottom" constant="20" id="7vb-hZ-pRp"/>
+                            <constraint firstItem="2C9-WN-3vm" firstAttribute="leading" secondItem="MZW-1p-mHG" secondAttribute="leading" constant="15" id="95y-Ta-cwt"/>
+                            <constraint firstItem="AiY-7y-F2b" firstAttribute="top" secondItem="MZW-1p-mHG" secondAttribute="top" constant="5" id="ecY-GB-hfW"/>
+                            <constraint firstItem="MZW-1p-mHG" firstAttribute="bottom" secondItem="2C9-WN-3vm" secondAttribute="bottom" constant="15" id="mEt-ef-5gx"/>
+                            <constraint firstItem="MZW-1p-mHG" firstAttribute="trailing" secondItem="2C9-WN-3vm" secondAttribute="trailing" constant="15" id="r64-Ps-Tq2"/>
+                            <constraint firstItem="fEa-oI-knR" firstAttribute="centerX" secondItem="owp-4U-gR2" secondAttribute="centerX" id="uo3-Fx-d30"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MZW-1p-mHG"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mq0-Vc-vnV" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="882.90854572713647"/>
         </scene>
     </scenes>
 </document>
