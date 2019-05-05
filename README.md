@@ -10,9 +10,9 @@ git clone https://github.com/furrki/2048-ios
 ```
 
 # Screenshots
-![Alt text](Screenshots/ss1.png?raw=true "List Cities")
-![Alt text](Screenshots/ss2.png?raw=true "List Forecast")
-![Alt text](Screenshots/ss3.png?raw=true "Weather Details")
+<img src="Screenshots/ss1.png?raw=true" width="400"> 
+<img src="Screenshots/ss2.png?raw=true" width="400"> 
+<img src="Screenshots/ss3.png?raw=true" width="400">  
 
 # Author
 furrki -- furkankaynary@gmail.com
