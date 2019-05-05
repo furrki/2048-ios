@@ -200,7 +200,3 @@ protocol GameDelegate: class {
     func game(_ tableChanged: [Int])
     func game(_ scoreUpdated: Int)
 }
-
-
-
-

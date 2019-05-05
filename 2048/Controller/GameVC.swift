@@ -113,6 +113,7 @@ extension GameVC: GameDelegate {
     }
     
     func game(changed cells: [Int]) {
-        self.gameTable.reloadItems(at: cells.map({ return IndexPath(item: $0, section: 0) }))
+        self.gameTable.reloadData()
+        //self.gameTable.reloadItems(at: cells.map({ return IndexPath(item: $0, section: 0) }))
     }
 }
