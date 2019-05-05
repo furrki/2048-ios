@@ -18,7 +18,7 @@ func getColor(for number: Int) -> [UIColor] {
     } else if number == 8 {
         return  [#colorLiteral(red: 1, green: 0.6588235294, blue: 0.003921568627, alpha: 1), #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
     } else if number == 16 {
-        return  [#colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1), #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
+        return  [#colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1), #colorLiteral(red: 0.1176470588, green: 0.1529411765, blue: 0.1803921569, alpha: 1)]
     } else if number == 32 {
         return  [#colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1), #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
     } else if number == 64 {

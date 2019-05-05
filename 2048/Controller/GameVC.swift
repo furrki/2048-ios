@@ -25,7 +25,7 @@ class GameVC: UIViewController {
         addGestureRecognizers()
     }
     
-    func addGestureRecognizers() {
+    func addGestureRecognizers()  {
         let rightSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swiped(gesture:)))
         rightSwipeRecognizer.direction = .right
         gameTable.addGestureRecognizer(rightSwipeRecognizer)
@@ -44,7 +44,6 @@ class GameVC: UIViewController {
     }
     
     @objc func swiped(gesture: UISwipeGestureRecognizer) {
-        print(gesture.direction)
         switch gesture.direction {
         case .up:
             game.doMove(move: .Up)
@@ -77,6 +76,12 @@ extension GameVC: UICollectionViewDelegate, UICollectionViewDataSource {
 
 extension GameVC: GameDelegate {
     func game(_ tableChanged: [Int]) {
-        gameTable.reloadData()
+        UIView.transition(with: gameTable, duration: 0.4, options: .allowUserInteraction, animations: {
+            self.gameTable.layer.opacity = 0.8
+            self.gameTable.reloadData()
+            UIView.transition(with: self.gameTable, duration: 0.1, options: .allowUserInteraction, animations: {
+                self.gameTable.layer.opacity = 1.0
+            }, completion: nil)
+        }, completion: nil)
     }
 }

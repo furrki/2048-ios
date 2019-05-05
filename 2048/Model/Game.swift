@@ -32,11 +32,126 @@ class Game {
         }
     }
     
+    func unite(from: Int, to: Int) {
+        if table[from] == table[to] {
+            table[to] = table[from] * 2
+            table[from] = 0
+        }
+    }
+    
+    func carry(from: Int, to: Int) {
+        if table[to] == 0 {
+            table[to] = table[from]
+            table[from] = 0
+        }
+    }
+    
     func doMove(move: Move) {
+        var colTable: [[Int]] {
+            get {
+                return self.table.chunked(into: 4)
+                
+            }
+            set {
+                self.table = newValue.flatMap({ (col) -> [Int] in
+                    return col
+                })
+            }
+        }
+        var rowTable: [[Int]] {
+            get {
+                return self.table.chunked(into: 4).transposed()
+                
+            }
+            set {
+                self.table = newValue.transposed().flatMap({ (col) -> [Int] in
+                    return col
+                })
+            }
+        }
         
+        
+        if move == .Left {
+            for i in 0...3 {
+                colTable[i] = moveLeft(col: colTable[i])
+            }
+        } else if move == .Right {
+            for i in 0...3 {
+                colTable[i] = moveRight(col: colTable[i])
+            }
+        } else if move == .Up {
+            for i in 0...3 {
+                rowTable[i] = moveUp(row: rowTable[i])
+            }
+        } else if move == .Down {
+            for i in 0...3 {
+                rowTable[i] = moveDown(row: rowTable[i])
+            }
+        }
         
         generateRandom()
     }
+    
+    func moveLeft(col: [Int]) -> [Int]{
+        var newCol = [0, 0, 0, 0]
+        var j = 0
+        var previous: Int? = nil
+        for i in 0..<col.count {
+            if col[i] != 0 {
+                if previous == nil {
+                    previous = col[i]
+                } else {
+                    if previous == col[i] {
+                        newCol[j] = 2 * col[i]
+                        previous = nil
+                    } else {
+                        newCol[j] = previous!
+                        previous = col[i]
+                    }
+                    j += 1
+                }
+            }
+        }
+        if previous != nil {
+            newCol[j] = previous!
+        }
+        return newCol
+    }
+    
+    func moveRight(col: [Int]) -> [Int]{
+        var newCol = [0, 0, 0, 0]
+        var j = 3
+        var previous: Int? = nil
+        for i in (0..<(col.count)).reversed() {
+            if col[i] != 0 {
+                if previous == nil {
+                    previous = col[i]
+                } else {
+                    if previous == col[i] {
+                        newCol[j] = 2 * col[i]
+                        previous = nil
+                    } else {
+                        newCol[j] = previous!
+                        previous = col[i]
+                    }
+                    j -= 1
+                }
+            }
+        }
+        if previous != nil {
+            newCol[j] = previous!
+        }
+        return newCol
+    }
+    
+    func moveUp(row: [Int]) -> [Int]{
+        return moveLeft(col:  row)
+    }
+    
+    func moveDown(row: [Int]) -> [Int]{
+        return moveRight(col:  row)
+    }
+    
 }
 
 enum Move {
@@ -46,4 +161,6 @@ enum Move {
 protocol GameDelegate: class {
     func game(_ tableChanged: [Int])
 }
+
+
 
