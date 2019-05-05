@@ -37,7 +37,8 @@ class Game {
         if availableIndexes.count > 0 {
             let selected = availableIndexes.randomElement()!
             table[selected] = 2
-            delegate?.game(table)
+            delegate?.game(changed: [selected])
+            //delegate?.game(table)
         }
     }
     
@@ -97,6 +98,13 @@ class Game {
         if lastTable == table {
             
         } else {
+            var dIndexes = [Int]()
+            for i in 0..<table.count {
+                if table[i] != lastTable[i] {
+                    dIndexes.append(i)
+                }
+            }
+            delegate?.game(changed: dIndexes)
             prevTable = lastTable
             generateRandom()
         }
@@ -173,6 +181,7 @@ enum Move {
 }
 
 protocol GameDelegate: class {
+    func game(changed cells: [Int])
     func game(_ tableChanged: [Int])
     func game(_ scoreUpdated: Int)
 }

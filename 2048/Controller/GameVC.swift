@@ -109,4 +109,9 @@ extension GameVC: GameDelegate {
         scoreLabel.text = "\(scoreUpdated)"
     }
     
+    func game(changed cells: [Int]) {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.gameTable.reloadItems(at: cells.map({ return IndexPath(item: $0, section: 0) }))
+        }, completion: nil)
+    }
 }
