@@ -47,6 +47,8 @@ class Game {
     }
     
     func doMove(move: Move) {
+        let lastTable = self.table
+        
         var colTable: [[Int]] {
             get {
                 return self.table.chunked(into: 4)
@@ -89,7 +91,11 @@ class Game {
             }
         }
         
-        generateRandom()
+        if lastTable == table {
+            
+        } else {
+            generateRandom()
+        }
     }
     
     func moveLeft(col: [Int]) -> [Int]{
@@ -161,6 +167,7 @@ enum Move {
 protocol GameDelegate: class {
     func game(_ tableChanged: [Int])
 }
+
 
 
 
