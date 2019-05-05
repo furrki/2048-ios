@@ -130,11 +130,21 @@
                                             <constraint firstItem="Cp6-gC-Mq4" firstAttribute="centerX" secondItem="fXV-uI-zlo" secondAttribute="centerX" id="LG1-wC-kwF"/>
                                             <constraint firstItem="Cp6-gC-Mq4" firstAttribute="centerY" secondItem="fXV-uI-zlo" secondAttribute="centerY" id="Nni-2V-T6D"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="numberLabel" destination="Cp6-gC-Mq4" id="OBD-Nh-wse"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="73H-UA-gQn" id="zRS-O4-NcL"/>
                                     <outlet property="delegate" destination="73H-UA-gQn" id="NbI-7J-71f"/>

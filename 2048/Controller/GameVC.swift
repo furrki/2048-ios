@@ -76,12 +76,6 @@ extension GameVC: UICollectionViewDelegate, UICollectionViewDataSource {
 
 extension GameVC: GameDelegate {
     func game(_ tableChanged: [Int]) {
-        UIView.transition(with: gameTable, duration: 0.4, options: .allowUserInteraction, animations: {
-            self.gameTable.layer.opacity = 0.8
-            self.gameTable.reloadData()
-            UIView.transition(with: self.gameTable, duration: 0.1, options: .allowUserInteraction, animations: {
-                self.gameTable.layer.opacity = 1.0
-            }, completion: nil)
-        }, completion: nil)
+        self.gameTable.reloadData()
     }
 }
