@@ -39,7 +39,6 @@ class Game {
             let selected = availableIndexes.randomElement()!
             table[selected] = 2
             delegate?.game(changed: [selected])
-            //delegate?.game(table)
         }
     }
     

@@ -10,25 +10,49 @@ import XCTest
 @testable import _048
 
 class _048Tests: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    
+    func testRightMove() {
+        let game = Game()
+        var result = game.moveRight(col: [0, 2, 2, 0])
+        XCTAssert(result == [0, 0, 0, 4])
+        
+        result = game.moveRight(col: [2, 2, 2, 0])
+        XCTAssert(result == [0, 0, 2, 4])
+        
+        result = game.moveRight(col: [0, 2, 4, 4])
+        XCTAssert(result == [0, 0, 2, 8])
+        
+        result = game.moveRight(col: [512, 512, 2048, 2048])
+        XCTAssert(result == [0, 0, 1024, 4096])
+        
+        result = game.moveRight(col: [2, 0, 2, 0])
+        XCTAssert(result == [0, 0, 0, 4])
+        
+        result = game.moveRight(col: [4, 8, 8, 4])
+        XCTAssert(result == [0, 4, 16, 4])
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testLeftMove() {
+        let game = Game()
+        var result = game.moveLeft(col: [0, 2, 2, 0])
+        XCTAssert(result == [4, 0, 0, 0])
+        
+        result = game.moveLeft(col: [2, 2, 2, 0])
+        XCTAssert(result == [4, 2, 0, 0])
+        
+        result = game.moveLeft(col: [0, 2, 4, 4])
+        XCTAssert(result == [2, 8, 0, 0])
+        
+        result = game.moveLeft(col: [512, 512, 2048, 2048])
+        XCTAssert(result == [1024, 4096, 0, 0])
+        
+        result = game.moveLeft(col: [2, 0, 2, 0])
+        XCTAssert(result == [4, 0, 0, 0])
+        
+        result = game.moveLeft(col: [4, 8, 8, 4])
+        XCTAssert(result == [4, 16, 4, 0])
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
+    
 }
+
