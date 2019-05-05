@@ -29,18 +29,22 @@ class GameVC: UIViewController {
     func addGestureRecognizers()  {
         let rightSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swiped(gesture:)))
         rightSwipeRecognizer.direction = .right
+        rightSwipeRecognizer.cancelsTouchesInView = true
         self.view.addGestureRecognizer(rightSwipeRecognizer)
         
         let leftSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swiped(gesture:)))
         leftSwipeRecognizer.direction = .left
+        leftSwipeRecognizer.cancelsTouchesInView = true
         self.view.addGestureRecognizer(leftSwipeRecognizer)
         
         let upSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swiped(gesture:)))
         upSwipeRecognizer.direction = .up
+        upSwipeRecognizer.cancelsTouchesInView = true
         self.view.addGestureRecognizer(upSwipeRecognizer)
         
         let downSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swiped(gesture:)))
         downSwipeRecognizer.direction = .down
+        downSwipeRecognizer.cancelsTouchesInView = true
         self.view.addGestureRecognizer(downSwipeRecognizer)
     }
     
@@ -67,10 +71,20 @@ class GameVC: UIViewController {
     }
     
     @IBAction func resetButtonTap(_ sender: Any) {
-        game = Game()
-        game.delegate = self
-        scoreLabel.text = "0"
-        gameTable.reloadData()
+        let refreshAlert = UIAlertController(title: "Reset", message: "Are you sure?", preferredStyle: UIAlertController.Style.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Reset", style: .destructive, handler: { (action: UIAlertAction!) in
+            self.game = Game()
+            self.game.delegate = self
+            self.scoreLabel.text = "0"
+            self.gameTable.reloadData()
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+          
+        }))
+        
+        present(refreshAlert, animated: true, completion: nil)
     }
 }
 
