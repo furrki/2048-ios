@@ -21,6 +21,7 @@ class Game {
     var prevScore = 0
     
     var table = [Int]()
+    
     var prevTable = [Int]()
     
     init() {
@@ -47,6 +48,7 @@ class Game {
             table = prevTable
             score = prevScore
             delegate?.game(table)
+            saveTable()
         }
     }
     
@@ -106,7 +108,9 @@ class Game {
             }
             delegate?.game(changed: dIndexes)
             prevTable = lastTable
+            
             generateRandom()
+            saveTable()
         }
     }
     
@@ -174,6 +178,18 @@ class Game {
         return moveRight(col:  row)
     }
     
+    func saveTable() {
+        let defaults = UserDefaults.standard
+        defaults.set(table, forKey: "GameTable")
+        defaults.set(prevTable, forKey: "PrevGameTable")
+        defaults.synchronize()
+    }
+    
+    func loadTable() {
+        let defaults = UserDefaults.standard
+        table = defaults.array(forKey: "GameTable")  as? [Int] ?? [Int]()
+        prevTable = defaults.array(forKey: "PrevGameTable")  as? [Int] ?? [Int]()
+    }
 }
 
 enum Move {

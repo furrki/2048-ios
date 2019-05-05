@@ -19,9 +19,11 @@ class GameVC: UIViewController {
         super.viewDidLoad()
         
         gameTable.delegate = self
-        gameTable.reloadData()
         
         game.delegate = self
+        game.loadTable()
+        
+        gameTable.reloadData()
         
         addGestureRecognizers()
     }
@@ -78,6 +80,7 @@ class GameVC: UIViewController {
             self.game.delegate = self
             self.scoreLabel.text = "0"
             self.gameTable.reloadData()
+            self.game.saveTable()
         }))
         
         refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
